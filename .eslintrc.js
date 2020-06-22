@@ -12,4 +12,10 @@ module.exports = {
   rules: {
     'prettier/prettier': 'error',
   },
+  globals: {
+    describe: 'readonly',
+    suite: 'readonly',
+    test: 'readonly',
+    it: 'readonly',
+  },
 }

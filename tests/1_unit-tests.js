@@ -1,13 +1,18 @@
-/*
- *
- *
- *       FILL IN EACH UNIT TEST BELOW COMPLETELY
- *       -----[Keep the tests in the same order!]----
- *       (if additional are added, keep them at the very end!)
- */
+const { assert } = require('chai')
 
-const chai = require('chai')
+const { isValidStringId } = require('../utils')
 
-describe('Unit Tests', () => {
-  // none required
+suite('Unit Tests', () => {
+  suite('Utils functions', () => {
+    suite('isValidStringId(id)', () => {
+      test('if is a string of 24 hex characters', done => {
+        assert.isTrue(isValidStringId('5e63c3a5e4232e4cd0274ac2'))
+        done()
+      })
+      test('if is not a string of 24 hex characters', done => {
+        assert.isFalse(isValidStringId('uhuh'))
+        done()
+      })
+    })
+  })
 })
